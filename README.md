@@ -1,12 +1,10 @@
 # jquery.textmanifier
 
----------------------------------------------------
-
 ##How to use it ?
-$('#inpXX1').textMagnifier({align : 'bottom',excision:['on',4,'-']});
-$('#inpXX2').textMagnifier({align : 'top',height : 60});
-$('#inpXX3').textMagnifier({align : 'left',height : 30 ,width : 'hide'}).css('color','red');
-$('.inpClass').textMagnifier({align : 'bottom',height : 40,maxlength : 10});
+$('#inpXX1').textMagnifier({align : 'bottom',excision:['on',4,'-']});<br>
+$('#inpXX2').textMagnifier({align : 'top',height : 60});<br>
+$('#inpXX3').textMagnifier({align : 'left',height : 30 ,width : 'hide'}).css('color','red');<br>
+$('.inpClass').textMagnifier({align : 'bottom',height : 40,maxlength : 10});<br>
 
 
 ##±ä¸üÄÚÈÝ£º
