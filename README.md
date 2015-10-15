@@ -23,6 +23,7 @@ $('.inpClass').textMagnifier({align : 'bottom',height : 40,maxlength : 10});
 * autocomplete   : 'off',          //默认关闭input自动填充
 * excision       : ['off',4,'-']   //分割,间隔，分隔符
 <br>
+
 ##变更内容：
 
 JQuery Input文字放大插件 V2.10
