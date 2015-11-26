@@ -1,16 +1,16 @@
 # jquery.textmagnifier
-[![jquery.textmagnifier](http://static.66tools.com/image/plug/jquery.textmagnifier.gif)](http://blog.66tools.com)
-* Ò»¿î»ùÓÚjqueryµÄÎÄ×Ö·Å´ó²å¼þ
-* Ö§³ÖinputÖÐÎÄ×Ö·Å´óÏÔÊ¾£¨ÉÏÏÂ×óÓÒ£©
-* Ö§³ÖÒøÐÐ¿¨·Ö¸ôÏÔÊ¾
-* Ö§³Örequireµ÷ÓÃ£¨AMD£©
+* ä¸€æ¬¾åŸºäºŽjqueryçš„æ–‡å­—æ”¾å¤§æ’ä»¶
+* æ”¯æŒinputä¸­æ–‡å­—æ”¾å¤§æ˜¾ç¤ºï¼ˆä¸Šä¸‹å·¦å³ï¼‰
+* æ”¯æŒé“¶è¡Œå¡åˆ†éš”æ˜¾ç¤º
+* æ”¯æŒrequireè°ƒç”¨ï¼ˆAMDï¼‰
+![jquery.textmagnifier](http://static.66tools.com/image/plug/jquery.textmagnifier.gif)
 
-##ÈçºÎÊ¹ÓÃ ?
-ÒýÈëjquery.textmagnifier
+##å¦‚ä½•ä½¿ç”¨ ?
+å¼•å…¥jquery.textmagnifier
 ```javascript
 <script src="../dist/js/jquery.textmagnifier.js"></script>
 ```
-³õÊ¼»¯
+åˆå§‹åŒ–
 ```javascript
 $('#inpXX1').textMagnifier({align: 'bottom', excision:['on',4,'-']});
 $('#inpXX2').textMagnifier({align: 'top', height: 60});
@@ -19,56 +19,56 @@ $('.inpClass').textMagnifier({align: 'bottom', height: 40, maxlength: 10});
 ```
 
 
-##ÅäÖÃÖ¸ÄÏ
-* background     : '#fdfdee',      //±³¾°É«
-* height         : 40,             //¸ß¶È
+##é…ç½®æŒ‡å—
+* background     : '#fdfdee',      //èƒŒæ™¯è‰²
+* height         : 40,             //é«˜åº¦
 * width          : 'auto',         //auto or hide
-* fontsize       : 30,             //×ÖÌå´óÐ¡
-* align          : 'top',          //Æ¯¸¡ÊôÐÔ
-* alignlen       : 5,              //Æ¯¸¡¾àÀë
-* maxlength      : 'auto',         //Ä¬ÈÏ²»ÏÞÖÆ×î´ó³¤¶È
-* font           : 'Consolas',     //Ä¬ÈÏ×ÖÌå
-* autocomplete   : 'off',          //Ä¬ÈÏ¹Ø±Õinput×Ô¶¯Ìî³ä
-* excision       : ['off',4,'-']   //·Ö¸î,¼ä¸ô£¬·Ö¸ô·û
+* fontsize       : 30,             //å­—ä½“å¤§å°
+* align          : 'top',          //æ¼‚æµ®å±žæ€§
+* alignlen       : 5,              //æ¼‚æµ®è·ç¦»
+* maxlength      : 'auto',         //é»˜è®¤ä¸é™åˆ¶æœ€å¤§é•¿åº¦
+* font           : 'Consolas',     //é»˜è®¤å­—ä½“
+* autocomplete   : 'off',          //é»˜è®¤å…³é—­inputè‡ªåŠ¨å¡«å……
+* excision       : ['off',4,'-']   //åˆ†å‰²,é—´éš”ï¼Œåˆ†éš”ç¬¦
 
-##±ä¸üÄÚÈÝ£º
+##å˜æ›´å†…å®¹ï¼š
 
-JQuery InputÎÄ×Ö·Å´ó²å¼þ V2.10
+##### JQuery Inputæ–‡å­—æ”¾å¤§æ’ä»¶ V2.10
 
-±ä¸üÄÚÈÝ£º
-* 1.ÅúÁ¿°ó¶¨Ê±Ö§³ÖÖØ»æ£¨½â¾ö¶¯Ì¬Ìí¼ÓÐÐ¶¨Î»ÎÊÌâ£©
+å˜æ›´å†…å®¹ï¼š
+* 1.æ‰¹é‡ç»‘å®šæ—¶æ”¯æŒé‡ç»˜ï¼ˆè§£å†³åŠ¨æ€æ·»åŠ è¡Œå®šä½é—®é¢˜ï¼‰
 
-JQuery InputÎÄ×Ö·Å´ó²å¼þ V2.00
+##### JQuery Inputæ–‡å­—æ”¾å¤§æ’ä»¶ V2.00
 
-±ä¸üÄÚÈÝ£º
-* 1.ÓÅ»¯´úÂë
-* 2.¿ÉÖ§³ÖÐÂÔö½Úµã³õÊ¼»¯²å¼þ
-* 3.Ôö¼Ó½¥ÏÔ¡¢½¥ÒþÐ§¹û
+å˜æ›´å†…å®¹ï¼š
+* 1.ä¼˜åŒ–ä»£ç 
+* 2.å¯æ”¯æŒæ–°å¢žèŠ‚ç‚¹åˆå§‹åŒ–æ’ä»¶
+* 3.å¢žåŠ æ¸æ˜¾ã€æ¸éšæ•ˆæžœ
 
-JQuery InputÎÄ×Ö·Å´ó²å¼þ V1.02
+##### JQuery Inputæ–‡å­—æ”¾å¤§æ’ä»¶ V1.02
 
-±ä¸üÄÚÈÝ£º
-* 1.Ìí¼ÓautocompleteÊôÐÔÉèÖÃ£¬Ä¬ÈÏ¹Ø±Õ
-* 2.ÐÂÔöÔöÇ¿ÐÍ·Ö¸ô·û¹¦ÄÜ£¨¿ÉÖ§³ÖÊý×Ö×Ö·ûÍ¬Ê±·Ö¸î£©£¬¿É×Ô¶¨Òå¿ªÆô£¬¹Ø±Õ
-* 3.ÐÂÔö·Ö¸î¼ä¸ôÒÔ¼°·Ö¸îÄÚÈÝ
+å˜æ›´å†…å®¹ï¼š
+* 1.æ·»åŠ autocompleteå±žæ€§è®¾ç½®ï¼Œé»˜è®¤å…³é—­
+* 2.æ–°å¢žå¢žå¼ºåž‹åˆ†éš”ç¬¦åŠŸèƒ½ï¼ˆå¯æ”¯æŒæ•°å­—å­—ç¬¦åŒæ—¶åˆ†å‰²ï¼‰ï¼Œå¯è‡ªå®šä¹‰å¼€å¯ï¼Œå…³é—­
+* 3.æ–°å¢žåˆ†å‰²é—´éš”ä»¥åŠåˆ†å‰²å†…å®¹
 
-JQuery InputÎÄ×Ö·Å´ó²å¼þ V1.01
+##### JQuery Inputæ–‡å­—æ”¾å¤§æ’ä»¶ V1.01
 
-±ä¸üÄÚÈÝ£º
-* 1.ÐÞÕýÔÚä¯ÀÀÆ÷ÖÐ²¼¾Ö´íÎ»µÄÎÊÌâ
-* 2.ÐÂÔömaxlengthÅúÁ¿ÏÞÖÆÊäÈë¿ò³¤¶È
-* 3.ÐÂÔöfont¿É×Ô¶¨Òå
-* 4.ÐÞÕýÊäÈëÄÚÈÝÌ«³¤µ¼ÖÂ±¬³öµÄÎÊÌâ
-* 5.ÌØ±ð²âÊÔ£¬¼æÈÝIE7/IE8µÈä¯ÀÀÆ÷
-Ä¿Ç°¿Ø¼þÒÑ¼ÓÈëÏîÄ¿£¬¼ÌÐøÍêÉÆÖÐ..
+å˜æ›´å†…å®¹ï¼š
+* 1.ä¿®æ­£åœ¨æµè§ˆå™¨ä¸­å¸ƒå±€é”™ä½çš„é—®é¢˜
+* 2.æ–°å¢žmaxlengthæ‰¹é‡é™åˆ¶è¾“å…¥æ¡†é•¿åº¦
+* 3.æ–°å¢žfontå¯è‡ªå®šä¹‰
+* 4.ä¿®æ­£è¾“å…¥å†…å®¹å¤ªé•¿å¯¼è‡´çˆ†å‡ºçš„é—®é¢˜
+* 5.ç‰¹åˆ«æµ‹è¯•ï¼Œå…¼å®¹IE7/IE8ç­‰æµè§ˆå™¨
+ç›®å‰æŽ§ä»¶å·²åŠ å…¥é¡¹ç›®ï¼Œç»§ç»­å®Œå–„ä¸­..
 
-JQuery InputÎÄ×Ö·Å´ó²å¼þ V1.0
+##### JQuery Inputæ–‡å­—æ”¾å¤§æ’ä»¶ V1.0
 
-¿Ø¼þÌØÐÔ£º
-* 1.Ö§³ÖJQueryÁ´Ê½µ÷ÓÃ
-* 2.Ö§³ÖID»òClass£¬¼´¿ÉÒÔÅúÁ¿³õÊ¼»¯
-* 3.Ö§³Ötop¡¢bottom¡¢left¡¢rightËÄ¸ö·½Ïò
-* 4.Ö§³ÖÌáÊ¾¿ò ×ÖÌå´óÐ¡£¬×ÖÌåÑÕÉ«£¬±³¾°ÑÕÉ«£¬¸ß¶È£¬¿í¶È£¬¾àÀëµÈ×Ô¶¨Òå
-* 5.Ö§³Ö×Ô¶¨ÒåÀ©Õ¹·½·¨
-* 6.Ö§³Ö³£¼ûV1.X°æ±¾µÄJquery
+æŽ§ä»¶ç‰¹æ€§ï¼š
+* 1.æ”¯æŒJQueryé“¾å¼è°ƒç”¨
+* 2.æ”¯æŒIDæˆ–Classï¼Œå³å¯ä»¥æ‰¹é‡åˆå§‹åŒ–
+* 3.æ”¯æŒtopã€bottomã€leftã€rightå››ä¸ªæ–¹å‘
+* 4.æ”¯æŒæç¤ºæ¡† å­—ä½“å¤§å°ï¼Œå­—ä½“é¢œè‰²ï¼ŒèƒŒæ™¯é¢œè‰²ï¼Œé«˜åº¦ï¼Œå®½åº¦ï¼Œè·ç¦»ç­‰è‡ªå®šä¹‰
+* 5.æ”¯æŒè‡ªå®šä¹‰æ‰©å±•æ–¹æ³•
+* 6.æ”¯æŒå¸¸è§V1.Xç‰ˆæœ¬çš„Jquery
 
