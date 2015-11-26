@@ -1,0 +1,26 @@
+{
+  "name": "jquery.textmagnifier",
+  "description": "a jquery plugin for text magnifier",
+  "main": [
+    "./dist/js/jquery.textmagnifier.js"
+  ],
+  "authors": [
+    "radishj <423261989@qq.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "textmagnifier",
+    "magnifier"
+  ],
+  "homepage": "https://github.com/RadishJ/jquery.textmagnifier",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.7.0"
+  }
+}

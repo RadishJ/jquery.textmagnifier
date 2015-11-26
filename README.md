@@ -1,16 +1,22 @@
-# jquery.textmanifier
-<br>
-##设计初衷
-插件设计是为了解决输入框银行卡输入框放大功能，实现输入框文字个`放大显示个`，支持个`多种配置个`，不断完善ing..
-<br>
+# jquery.textmagnifier
+* 一款基于jquery的文字放大插件
+* 支持input中文字放大显示（上下左右）
+* 支持银行卡分隔显示
+* 支持require调用（AMD）
+
 ##如何使用 ?
+引入jquery.textmagnifier
 ```javascript
-$('#inpXX1').textMagnifier({align : 'bottom',excision:['on',4,'-']});
-$('#inpXX2').textMagnifier({align : 'top',height : 60});
-$('#inpXX3').textMagnifier({align : 'left',height : 30 ,width : 'hide'}).css('color','red');
-$('.inpClass').textMagnifier({align : 'bottom',height : 40,maxlength : 10});
+<script src="../dist/js/jquery.textmagnifier.js"></script>
 ```
-<br>
+初始化
+```javascript
+$('#inpXX1').textMagnifier({align: 'bottom', excision:['on',4,'-']});
+$('#inpXX2').textMagnifier({align: 'top', height: 60});
+$('#inpXX3').textMagnifier({align: 'left', height: 30, width: 'hide'}).css('color','red');
+$('.inpClass').textMagnifier({align: 'bottom', height: 40, maxlength: 10});
+```
+
 ##配置指南
 * background     : '#fdfdee',      //背景色
 * height         : 40,             //高度
@@ -22,7 +28,6 @@ $('.inpClass').textMagnifier({align : 'bottom',height : 40,maxlength : 10});
 * font           : 'Consolas',     //默认字体
 * autocomplete   : 'off',          //默认关闭input自动填充
 * excision       : ['off',4,'-']   //分割,间隔，分隔符
-<br>
 
 ##变更内容：
 
@@ -80,7 +85,5 @@ JQuery Input文字放大插件 V1.0
 * 5.支持自定义扩展方法
 * 6.支持常见V1.X版本的Jquery
 
-目前自己测了，支持FF/Chrome/IE8及以上。
-
-可能存在bug..
+目前支持FF/Chrome/IE8及以上。
 

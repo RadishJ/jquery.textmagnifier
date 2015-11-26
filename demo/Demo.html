@@ -1,8 +1,8 @@
 ﻿<html>
 	<head>
 		<title>jQuery TextMagnifier</title>
-		<script src="http://libs.baidu.com/jquery/1.6.0/jquery.js"></script>
-		<script src="js/jquery.textmagnifier.js"></script>
+		<script src="../dist/js/jquery.js"></script>
+		<script src="../dist/js/jquery.textmagnifier.js"></script>
 		<script type="text/javascript">
 			$(function(){
 				/*页面很多k是为了测试是否影响原来布局*/
@@ -18,15 +18,15 @@
 				$('#btnOK').bind('click',function(){
 					$('#inpXX1').textMagnifier('show');
 				});
-				
+
 				$("#btnAdd").click(function(){
 					var input = "<input class='inpClass' id='txt1' type='text'/>";
-					
+
 					$("#inputArea").append(input).append("<br/>");
 					//重复调用初始化方法，以达到ajax新增节点事件绑定
 					//Repeated calls to the initialization method, in order to achieve the new node event binding Ajax
 					$('.inpClass').textMagnifier({align : 'bottom',height : 40,maxlength : 10});
-					
+
 				});
 			});
 
