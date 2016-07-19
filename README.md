@@ -33,6 +33,12 @@ $('.inpClass').textMagnifier({align: 'bottom', height: 40, maxlength: 10});
 
 ##变更内容：
 
+##### JQuery Input文字放大插件 V2.50
+
+变更内容：
+* 1.优化插件逻辑，上下文仅一份实例，极大提升性能
+* 2.时隔一年多，再回首优化，别有一番感触
+
 ##### JQuery Input文字放大插件 V2.10
 
 变更内容：

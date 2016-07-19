@@ -18,10 +18,10 @@
  *  $('#inpXX1').textMagnifier({align : 'bottom',height : 60});
  *  $('.inpXX1').textMagnifier();
  *
- * Version        : V2.10
- * Maintained by  : RadishJ
+ * Version        : V2.50
+ * Maintained by  : baili
  * Create Date    : 2014-12-4
- * Last Fix Date  : 2015-06-10
+ * Last Fix Date  : 2016-07-19
  */
 ;
 (function(factory) {
