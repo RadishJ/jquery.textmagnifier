@@ -3,19 +3,19 @@
  *
  * Parameters :
  *
- * 	foreground    : '#000000'
- * 	background    : '#FFFFCC'
- * 	height        : 40
- * 	width         : 'auto'
- * 	fontsize      : 30
- * 	align         : 'top'
- * 	alignlen      : 5
+ *  foreground    : '#000000'
+ *  background    : '#FFFFCC'
+ *  height        : 40
+ *  width         : 'auto'
+ *  fontsize      : 30
+ *  align         : 'top'
+ *  alignlen      : 5
  *  maxlength     : 5
  *  font          : 'Consolas'
  *  autocomplete  : 'off'
  *  excision      : ['off',4,'-']
  * Example:
- *	$('#inpXX1').textMagnifier({align : 'bottom',height : 60});
+ *  $('#inpXX1').textMagnifier({align : 'bottom',height : 60});
  *  $('.inpXX1').textMagnifier();
  *
  * Version        : V2.10
@@ -28,6 +28,8 @@
     if (typeof define === "function" && define.amd) {
         // AMD模式
         define(["jquery"], factory);
+    } else if (typeof exports === 'object') {
+        module.exports = factory();
     } else {
         // 全局模式
         factory(jQuery);
@@ -44,6 +46,25 @@
                 var $div = $('<div class=\'text-magnifier-plug\'></div>');
                 $div.css('clear', 'both');
                 $div.css('position', 'absolute');
+
+                /*不换行*/
+                $div.css('word-break', 'keep-all');
+                $div.css('white-space', 'nowrap');
+
+                $div.css('border', 'solid 1px #ffd2b2');
+                $div.css('z-index', '999');
+                $div.css('display', 'none');
+
+                $('body').append($div);
+
+            },
+            _resize: function($this) {
+                var ori_left = $this.offset().left,
+                    ori_top = $this.offset().top,
+                    ori_width = $this.outerWidth(),
+                    ori_height = $this.outerHeight(),
+                    settings = $this.data('config');
+                var $div = $('.text-magnifier-plug');
                 $div.css('font-family', settings.font);
                 $div.css('min-width', ori_width + 'px');
                 if ('hide' == settings.width) {
@@ -53,33 +74,15 @@
                 } else {
                     $div.css('width', 'auto');
                 }
-                /*不换行*/
-                $div.css('word-break', 'keep-all');
-                $div.css('white-space', 'nowrap');
                 $div.css('height', settings.height + 'px');
                 $div.css('line-height', settings.height + 'px');
                 $div.css('background-color', settings.background);
                 $div.css('color', settings.foreground);
                 $div.css('font-size', settings.fontsize + 'px');
-                $div.css('border', 'solid 1px #ffd2b2');
-                $div.css('z-index', '999');
-                $div.css('display', 'none');
-
                 if ('auto' != settings.maxlength) {
                     $this.attr('maxlength', settings.maxlength);
                 }
                 $this.attr('autocomplete', settings.autocomplete);
-                $this.after($div);
-
-                this._resize($this);
-            },
-            _resize: function($this) {
-                var ori_left = $this.offset().left,
-                    ori_top = $this.offset().top,
-                    ori_width = $this.outerWidth(),
-                    ori_height = $this.outerHeight(),
-                    settings = $this.data('config');
-                var $div = $this.next('div');
                 switch (settings.align) {
 
                     case 'left':
@@ -119,9 +122,7 @@
                 }
             },
             _bindEve: function($this) {
-                if (undefined == $this.next('div') || 'text-magnifier-plug' != $this.next('div').attr('class'))
-                    this._createHtml();
-                var $div = $this.next('div');
+                var $div = $('.text-magnifier-plug');
                 $this.bind('keyup', function(e) {
                     var value = $.trim(e.target.value);
                     if (value == '') {
@@ -136,6 +137,7 @@
                         privateFunction._hide($this);
                     } else {
                         $div.html(privateFunction._txtHandle(value, $this.data('config')));
+                        privateFunction._resize($this);
                         privateFunction._show($this);
                     }
                 }).bind('blur', function(e) {
@@ -159,19 +161,16 @@
                 }
             },
             _hide: function($this) {
-                if (!privateFunction._exist($this))
-                    privateFunction._createHtml($this);
-                var $div = $this.next('div');
-                $div.fadeOut(200);
+                var $div = $('.text-magnifier-plug');
+                $div.hide();
             },
             _show: function($this) {
-                if (!privateFunction._exist($this))
-                    privateFunction._createHtml($this);
-                var $div = $this.next('div');
+
+                var $div = $('.text-magnifier-plug');
                 $div.fadeIn(200);
             },
             _exist: function($this) {
-                if (undefined == $this || undefined == $this.next('div') || 'text-magnifier-plug' != $this.next('div').attr('class')) {
+                if (!$('.text-magnifier-plug').length) {
                     return false;
                 } else {
                     return true;
@@ -188,44 +187,43 @@
     var publicFunction = {
         init: function(options) {
             return this.each(function() {
-                var $this = $(this);
-                if (!privateFunction._exist($this)) {
-                    var settings = $this.data('config');
-                    if (undefined == settings) {
-                        var defaults = {
-                            foreground: '#ff7800', //前景色
-                            background: '#fdfdee', //背景色
-                            height: 40, //高度
-                            width: 'auto', //auto or hide
-                            fontsize: 30, //字体大小
-                            align: 'top', //漂浮属性
-                            alignlen: 5, //漂浮距离
-                            maxlength: 'auto', //默认不限制最大长度
-                            font: 'Consolas', //默认字体
-                            autocomplete: 'off', //默认关闭input自动填充
-                            excision: ['off', 4, '-'] //分割,间隔，分隔符
-                        };
+                var $this = $(this),
+                    settings = $this.data('config');
+                if (undefined == settings) {
+                    var defaults = {
+                        foreground: '#ff7800', //前景色
+                        background: '#fdfdee', //背景色
+                        height: 40, //高度
+                        width: 'auto', //auto or hide
+                        fontsize: 30, //字体大小
+                        align: 'top', //漂浮属性
+                        alignlen: 5, //漂浮距离
+                        maxlength: 'auto', //默认不限制最大长度
+                        font: 'Consolas', //默认字体
+                        autocomplete: 'off', //默认关闭input自动填充
+                        excision: ['off', 4, '-'] //分割,间隔，分隔符
+                    };
 
-                        settings = $.extend({}, defaults, options);
+                    settings = $.extend({}, defaults, options);
 
-                        $this.data('config', settings);
-                    }
-                    privateFunction._createHtml($this);
-                    privateFunction._bindEve($this);
-                    privateFunction._log('Hello TextMagnifier ..');
-                } else {
-                    privateFunction._resize($this);
+                    $this.data('config', settings);
                 }
+                if (!privateFunction._exist($this)) {
+                    privateFunction._createHtml($this);
+                }
+                privateFunction._bindEve($this);
+                privateFunction._log('Hello TextMagnifier ..');
+
             });
         },
         show: function() {
                 return this.each(function() {
                     var $this = $(this);
                     if (privateFunction._exist($this)) {
+                        privateFunction._resize($this);
                         privateFunction._show($this);
                     } else {
-                        privateFunction._createHtml($this);
-                        privateFunction._show($this);
+                        throw new Error('TextMagnifier should initialize first..')
                     }
                 });
             }

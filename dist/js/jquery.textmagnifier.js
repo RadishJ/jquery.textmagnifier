@@ -3,19 +3,19 @@
  *
  * Parameters :
  *
- * 	foreground    : '#000000'
- * 	background    : '#FFFFCC'
- * 	height        : 40
- * 	width         : 'auto'
- * 	fontsize      : 30
- * 	align         : 'top'
- * 	alignlen      : 5
+ *  foreground    : '#000000'
+ *  background    : '#FFFFCC'
+ *  height        : 40
+ *  width         : 'auto'
+ *  fontsize      : 30
+ *  align         : 'top'
+ *  alignlen      : 5
  *  maxlength     : 5
  *  font          : 'Consolas'
  *  autocomplete  : 'off'
  *  excision      : ['off',4,'-']
  * Example:
- *	$('#inpXX1').textMagnifier({align : 'bottom',height : 60});
+ *  $('#inpXX1').textMagnifier({align : 'bottom',height : 60});
  *  $('.inpXX1').textMagnifier();
  *
  * Version        : V2.10
@@ -28,6 +28,8 @@
     if (typeof define === "function" && define.amd) {
         // AMD模式
         define(["jquery"], factory);
+    } else if (typeof exports === 'object') {
+        module.exports = factory();
     } else {
         // 全局模式
         factory(jQuery);
@@ -69,8 +71,9 @@
                     $this.attr('maxlength', settings.maxlength);
                 }
                 $this.attr('autocomplete', settings.autocomplete);
-                $this.after($div);
-
+                //$this.after($div);
+                //document.body.appendChild($this);
+                $('body').append($this);
                 this._resize($this);
             },
             _resize: function($this) {
@@ -79,7 +82,7 @@
                     ori_width = $this.outerWidth(),
                     ori_height = $this.outerHeight(),
                     settings = $this.data('config');
-                var $div = $this.next('div');
+                var $div = $('.text-magnifier-plug');
                 switch (settings.align) {
 
                     case 'left':
@@ -119,7 +122,7 @@
                 }
             },
             _bindEve: function($this) {
-                if (undefined == $this.next('div') || 'text-magnifier-plug' != $this.next('div').attr('class'))
+                if (!$('.text-magnifier-plug').length)
                     this._createHtml();
                 var $div = $this.next('div');
                 $this.bind('keyup', function(e) {
@@ -171,7 +174,7 @@
                 $div.fadeIn(200);
             },
             _exist: function($this) {
-                if (undefined == $this || undefined == $this.next('div') || 'text-magnifier-plug' != $this.next('div').attr('class')) {
+                if (!$('.text-magnifier-plug').length) {
                     return false;
                 } else {
                     return true;
